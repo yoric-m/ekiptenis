@@ -65,7 +65,10 @@
                   body += getImageTag(p.media.url);
 
                   // src.replace(`-{width}-{height}-{quality}`, "");
-                } else if (p.__type !== "article_paragraph_signature") {
+                } else if (
+                  p.__type !== "article_paragraph_signature" &&
+                  p.content
+                ) {
                   body += "<p>" + p.content + "</p><br/>";
                   if (p.layout === "chapo") {
                     body += imgEntete;
