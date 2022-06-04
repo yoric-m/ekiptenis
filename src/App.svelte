@@ -10,11 +10,13 @@
   let lastFetchUrl = 0;
   let imgEntete = "";
   let arrayComments = [];
+  let lastUrl = "";
 
   const handleKeyup = () => {
     // if we already handled the request we don't do anything more
     console.log(new Date() - lastFetchUrl);
-    if (showArticle || new Date() - lastFetchUrl < 100) return;
+    if (showArticle && new Date() - lastFetchUrl < 100) return;
+    if (url === lastUrl) return;
 
     // regex with http.../234235523
     const regexUrl = /^http.+\/(\d{4,})$/i;
@@ -26,6 +28,9 @@
 
     // Record the time we fetched a valid url
     lastFetchUrl = new Date();
+    body = "";
+    let arrayComments = [];
+    lastUrl = url;
 
     const urlToFetch = jsonUrl + returnMatches[1];
     fetch(urlToFetch)
