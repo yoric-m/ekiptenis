@@ -1,7 +1,5 @@
 <script>
   const jsonUrl = "https://dwh.lequipe.fr/api/v2/efr/news/";
-  const commentsUrl =
-    "https://dwh.lequipe.fr/api/efr/comments/Tennis/Article/XXX/limits/500/lasts/0/best";
   let commUrl = "";
   let url = "";
   let showArticle = false;
@@ -11,6 +9,7 @@
   let imgEntete = "";
   let arrayComments = [];
   let lastUrl = "";
+  let inputSize = 2;
 
   const handleKeyup = () => {
     // if we already handled the request we don't do anything more
@@ -28,6 +27,7 @@
 
     // Record the time we fetched a valid url
     lastFetchUrl = new Date();
+    // Reset the page content before to fetch it
     body = "";
     let arrayComments = [];
     lastUrl = url;
@@ -47,7 +47,7 @@
         goGetComments();
         data.items.map((e) => {
           if (e.layout === "article_feature") {
-            title = e.objet.title + " <br/> " + e.objet.long_title;
+            title = e.objet.long_title;
             if (e.objet.media.url) {
               console.log("article_feature");
               console.log(e.objet);
@@ -138,7 +138,9 @@
   />
 </div>
 
-<div class="content">
+<input type="range" bind:value={inputSize} min="1.0" max="3.0" step="0.1" />
+
+<div class="content" style="--fontSizeEm: {inputSize}em">
   {#if showArticle}
     <h1>{@html title}</h1>
     <div class="body">{@html body}</div>
@@ -185,7 +187,8 @@
   }
   .content {
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 10px;
+    font-size: var(--fontSizeEm);
   }
   .body {
     margin-top: 30px;
