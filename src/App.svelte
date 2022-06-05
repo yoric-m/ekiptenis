@@ -108,7 +108,11 @@
         console.log("Comments");
         console.log(data);
         data.comments.map((comm) => {
-          arrayComments = [...arrayComments, comm.text];
+          let serieCom = [comm.text];
+          if (comm.comments) {
+            comm.comments.map((scom) => serieCom.push("> " + scom.text));
+          }
+          arrayComments = [...arrayComments, serieCom];
           // commentHTML += '<div class="comment">' + comm.text + "</div>";
         });
       });
@@ -155,9 +159,13 @@
       <h1 class="title">{@html title}</h1>
       <div class="body">{@html body}</div>
       <div class="comments">
-        {#each arrayComments as oneComment}
-          <div class="comment">
-            {oneComment}
+        {#each arrayComments as oneSerie}
+          <div class="serie">
+            {#each oneSerie as oneComment}
+              <div class="comment">
+                {oneComment}
+              </div>
+            {/each}
           </div>
         {/each}
       </div>
@@ -222,5 +230,11 @@
   .comment {
     border-top: 1px solid black;
     padding: 5px 5px;
+  }
+  .comment:first-child {
+    margin-left: -20px;
+  }
+  .serie {
+    margin-left: 20px;
   }
 </style>
