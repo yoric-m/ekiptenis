@@ -64,7 +64,10 @@
                 if (p.title) {
                   body += "<h3>" + p.title + "</h3>";
                 }
-                if (p.__type === "article_paragraph_media") {
+                if (
+                  p.__type === "article_paragraph_media" &&
+                  p.media.__type !== "base_video"
+                ) {
                   console.log("article_paragraph_media");
                   console.log(p);
                   body += getImageTag(p.media.url);
