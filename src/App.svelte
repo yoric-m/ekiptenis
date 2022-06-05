@@ -29,7 +29,7 @@
     lastFetchUrl = new Date();
     // Reset the page content before to fetch it
     body = "";
-    let arrayComments = [];
+    arrayComments = [];
     lastUrl = url;
 
     const urlToFetch = jsonUrl + returnMatches[1];
