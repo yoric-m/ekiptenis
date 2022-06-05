@@ -130,36 +130,45 @@
   };
 </script>
 
-<div class="header">
-  <h1>EkipTenis</h1>
-  <input
-    type="text"
-    on:keyup={handleKeyup}
-    on:click={handleKeyup}
-    bind:value={url}
-    placeholder="Enter a url..."
-  />
-</div>
+<div class="main">
+  <div class="header">
+    <h1>EkipTenis</h1>
+    <input
+      type="text"
+      on:keyup={handleKeyup}
+      on:click={handleKeyup}
+      bind:value={url}
+      placeholder="Enter a url..."
+    />
+  </div>
 
-<input type="range" bind:value={inputSize} min="1.0" max="3.0" step="0.1" />
-
-<div class="content" style="--fontSizeEm: {inputSize}em">
   {#if showArticle}
-    <h1>{@html title}</h1>
-    <div class="body">{@html body}</div>
-    <div class="comments">
-      {#each arrayComments as oneComment}
-        <div class="comment">
-          {oneComment}
-        </div>
-      {/each}
+    <input
+      type="range"
+      bind:value={inputSize}
+      min="1.0"
+      max="3.0"
+      step="0.01"
+    />
+
+    <div class="content" style="--fontSizeEm: {inputSize}em">
+      <h1 class="title">{@html title}</h1>
+      <div class="body">{@html body}</div>
+      <div class="comments">
+        {#each arrayComments as oneComment}
+          <div class="comment">
+            {oneComment}
+          </div>
+        {/each}
+      </div>
     </div>
-    <!-- <textarea bind:value={textArticle} /> -->
-    <!-- <div class="article">{textArticle}</div> -->
   {/if}
 </div>
 
 <style>
+  .main {
+    background-color: #ddd;
+  }
   h1 {
     color: purple;
     padding-right: 40px;
@@ -177,30 +186,38 @@
     font-size: 1.3em;
     background-color: lightgrey;
   }
+  input[type="range"] {
+    width: 100%;
+  }
+  input[type="text"] {
+    margin-top: 10px;
+  }
   input::placeholder {
     color: purple;
   }
   .title {
-    font-weight: 1.5em;
-    font-size: 1.5em;
-    color: purple;
-    background-color: rgb(211, 246, 246);
+    margin: 5px 5px;
     text-align: center;
-    display: block;
   }
   .content {
     justify-content: center;
-    padding-top: 10px;
     font-size: var(--fontSizeEm);
+    padding: 0px 20px;
+    background-color: #ddd;
   }
   .body {
-    margin-top: 30px;
     border: 1px solid black;
     display: block;
+    margin: 20px 11px;
+    padding: 0px 20px;
+    background-color: white;
   }
   img.center {
     display: block;
     margin: 0 auto;
+  }
+  .comments {
+    border-top: 1px solid black;
   }
   .comment {
     border-top: 1px solid black;
