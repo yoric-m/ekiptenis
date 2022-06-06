@@ -46,9 +46,9 @@ export async function fetchData(url) {
     }
   });
   return {
-    title: title,
-    body: body,
-    comments: comments,
+    title,
+    body,
+    comments,
   };
 }
 

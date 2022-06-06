@@ -25,8 +25,6 @@
 </div>
 
 <style>
-  .main {
-  }
   .content {
     justify-content: center;
     font-size: var(--fontSizeEm);
