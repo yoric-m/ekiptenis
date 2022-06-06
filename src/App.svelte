@@ -31,6 +31,7 @@
     body = "";
     arrayComments = [];
     lastUrl = url;
+    imgEntete = "";
 
     const urlToFetch = jsonUrl + returnMatches[1];
     fetch(urlToFetch)
