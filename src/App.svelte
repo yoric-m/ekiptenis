@@ -54,7 +54,7 @@
               console.log(e.objet);
               console.log(e.objet.media);
               console.log(e.objet.media.url);
-              imgEntete = getImageTag(e.objet.media.url);
+              imgEntete = getImageTag(e.objet.media.url, e.objet.media.legende);
             }
           }
           if (e.layout === "article_body") {
@@ -71,7 +71,7 @@
                 ) {
                   console.log("article_paragraph_media");
                   console.log(p);
-                  body += getImageTag(p.media.url);
+                  body += getImageTag(p.media.url, p.media.legende);
 
                   // src.replace(`-{width}-{height}-{quality}`, "");
                 } else if (
@@ -118,7 +118,7 @@
         });
       });
   };
-  const getImageTag = (url) => {
+  const getImageTag = (url, caption) => {
     let src = url;
     // const regImg = /^(http.+)\/\d:\d,\d:\d/i;
     const regImg = /^(http.+[0-9]{6,})\//i;
@@ -129,9 +129,11 @@
     console.log(returnMatches);
     console.log(returnMatchet);
     src = returnMatches[1] + "/203:6,1793:1066-828-552-75" + returnMatchet[1];
-    return (
-      '<img style="display:block;margin: 0 auto;" src="' + src + '" /><br/>'
-    );
+    return `<figure>
+				<img style="display:block;margin: 0 auto;" src="${src}" />
+				<figcaption style="font-size: calc(${inputSize}em/3);text-align:center;"><i>${caption}</i></figcaption>
+				</figure>
+				`;
   };
 </script>
 
