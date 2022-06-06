@@ -6,7 +6,7 @@
 
 <style>
   h1 {
-    color: purple;
+    color: var(--primary-color);
     padding-right: 40px;
   }
   .title {

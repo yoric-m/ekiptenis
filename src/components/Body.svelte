@@ -8,10 +8,9 @@
 
 <style>
   .body {
-    border: 1px solid black;
+    border: 1px solid var(--font-color);
     display: block;
     margin: 20px 11px;
     padding: 0px 20px;
-    background-color: white;
   }
 </style>

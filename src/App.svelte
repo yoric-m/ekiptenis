@@ -26,12 +26,10 @@
 
 <style>
   .main {
-    background-color: #ddd;
   }
   .content {
     justify-content: center;
     font-size: var(--fontSizeEm);
     padding: 0px 20px;
-    background-color: #ddd;
   }
 </style>

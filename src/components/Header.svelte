@@ -1,4 +1,5 @@
 <script>
+  import ToggleTheme from "./ToggleTheme.svelte";
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
@@ -28,6 +29,7 @@
 </script>
 
 <div class="header">
+  <ToggleTheme />
   <h1>EkipTenis</h1>
   <input
     type="text"
@@ -40,7 +42,7 @@
 
 <style>
   h1 {
-    color: purple;
+    color: var(--primary-color);
     padding-right: 40px;
   }
   .header {
@@ -48,18 +50,18 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    background-color: lightgrey;
+    background-color: var(--background-color);
   }
   input {
     width: 1000px;
     padding: 5px 10px;
     font-size: 1.3em;
-    background-color: lightgrey;
   }
   input[type="text"] {
     margin-top: 10px;
-  }
-  input::placeholder {
-    color: purple;
+    background-color: var(--background-color);
+    color: gray;
+    border-width: 0px;
+    border-style: none;
   }
 </style>

@@ -16,10 +16,10 @@
 
 <style>
   .comments {
-    border-top: 1px solid black;
+    border-top: 1px solid var(--font-color);
   }
   .comment {
-    border-top: 1px solid black;
+    border-top: 1px solid var(--font-color);
     padding: 5px 5px;
   }
   .comment:first-child {
