@@ -20,6 +20,10 @@
       <Body body={article.body} />
       <Comments comments={article.comments} />
     </div>
+  {:else}
+    <div class="content" style="--fontSizeEm: {inputSize}em">
+      Ceci est un espace
+    </div>
   {/if}
 </div>
 
