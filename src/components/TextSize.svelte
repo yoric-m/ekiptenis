@@ -10,6 +10,7 @@
     padding: 5px 10px;
     font-size: 1.3em;
     background-color: lightgrey;
+    display: inline;
   }
   input[type="range"] {
     width: 100%;

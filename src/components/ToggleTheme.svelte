@@ -49,5 +49,6 @@
     color: var(--text-color);
     cursor: pointer;
     font-size: 1.6em;
+    display: inline;
   }
 </style>
