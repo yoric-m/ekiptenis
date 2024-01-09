@@ -25,12 +25,12 @@
       localStorage.removeItem(STORAGE_KEY);
       localStorage.setItem(
         STORAGE_KEY,
-        stored === "light" ? THEMES.DARK : THEMES.LIGHT
+        stored === "light" ? THEMES.LIGHT : THEMES.DARK
       );
     } else {
       localStorage.setItem(
         STORAGE_KEY,
-        prefersDarkThemes() ? THEMES.LIGHT : THEMES.DARK
+        prefersDarkThemes() ? THEMES.DARK : THEMES.LIGHT
       );
     }
     applyTheme();
