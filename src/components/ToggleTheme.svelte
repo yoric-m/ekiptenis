@@ -26,7 +26,7 @@
     } else {
       localStorage.setItem(
         STORAGE_KEY,
-        prefersDarkThemes() ? THEMES.LIGHT : THEMES.DARK
+        prefersDarkThemes() ? THEMES.DARK : THEMES.LIGHT
       );
     }
     applyTheme();
