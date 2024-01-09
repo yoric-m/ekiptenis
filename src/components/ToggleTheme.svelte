@@ -13,7 +13,7 @@
   const applyTheme = () => {
     if (document.querySelector("#mode").innerHTML === "🌙") {
       document.querySelector("#mode").innerHTML = "🌞";
-      document.querySelector(":root").classList.toggle("dark");
+      document.querySelector(":root").classList.toggle("light");
     } else {
       document.querySelector("#mode").innerHTML = "🌙";
       document.querySelector(":root").classList.toggle("light");
