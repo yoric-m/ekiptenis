@@ -12,12 +12,11 @@
 
   const applyTheme = () => {
     if (document.querySelector("#mode").innerHTML === "🌙") {
-      document.querySelector("#mode").innerHTML = "🌞";
-      document.querySelector(":root").classList.toggle("light");
+      document.querySelector("#mode").innerHTML = "🌞";      
     } else {
       document.querySelector("#mode").innerHTML = "🌙";
-      document.querySelector(":root").classList.toggle("light");
     }
+    document.querySelector(":root").classList.toggle(THEMES.DARK);
   };
 
   const toggleTheme = () => {
