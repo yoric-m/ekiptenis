@@ -28,6 +28,10 @@
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(
+        STORAGE_KEY,
+        stored === "light" ? THEMES.DARK : THEMES.LIGHT
+      );
     } else {
       localStorage.setItem(
         STORAGE_KEY,
