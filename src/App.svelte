@@ -22,7 +22,7 @@
     </div>
   {:else}
     <div class="content" style="--fontSizeEm: {inputSize}em">
-      Ceci est un espace
+      Menu Chrono
     </div>
   {/if}
 </div>
