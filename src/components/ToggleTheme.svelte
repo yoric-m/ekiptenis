@@ -16,7 +16,7 @@
     } else {
       document.querySelector("#mode").innerHTML = "🌙";
     }
-    document.querySelector(":root").classList.toggle(THEMES.DARK);
+    document.querySelector(":root").classList.toggle(THEMES.LIGHT);
   };
 
   const toggleTheme = () => {
