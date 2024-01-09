@@ -25,7 +25,7 @@
       localStorage.removeItem(STORAGE_KEY);
       localStorage.setItem(
         STORAGE_KEY,
-        stored === "light" ? THEMES.LIGHT : THEMES.DARK
+        stored === THEMES.DARK ? THEMES.LIGHT : THEMES.DARK
       );
     } else {
       localStorage.setItem(
