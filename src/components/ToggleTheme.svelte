@@ -8,10 +8,10 @@
     LIGHT: "light",
   };
 
-  const prefersDarkThemes = () => !window.matchMedia(DARK_PREFERENCE).matches;
+  const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
 
   const applyTheme = () => {
-    document.querySelector(":root").classList.toggle("light");
+    document.querySelector(":root").classList.toggle("dark");
     if (document.querySelector("#mode").innerHTML === "🌙") {
       document.querySelector("#mode").innerHTML = "🌞";
     } else {
