@@ -36,6 +36,7 @@
     applyTheme();
   };
   onMount(() => {
+    document.querySelector(":root").classList.toggle(THEMES.LIGHT);
     applyTheme();
     window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
   });
