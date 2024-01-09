@@ -11,10 +11,10 @@
   const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
 
   const applyTheme = () => {
-    if (document.querySelector("#mode").innerHTML === "🌙") {
-      document.querySelector("#mode").innerHTML = "🌞";      
+    if (document.querySelector("#mode").innerHTML === "🌞") {
+      document.querySelector("#mode").innerHTML = "🌙";      
     } else {
-      document.querySelector("#mode").innerHTML = "🌙";
+      document.querySelector("#mode").innerHTML = "🌞";
     }
     document.querySelector(":root").classList.toggle(THEMES.LIGHT);
   };
