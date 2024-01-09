@@ -11,16 +11,12 @@
   const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
 
   const applyTheme = () => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "light") {
-      document.querySelector(":root").classList.toggle("light");
-    } else {
-      document.querySelector(":root").classList.toggle("dark");
-    }
     if (document.querySelector("#mode").innerHTML === "🌙") {
       document.querySelector("#mode").innerHTML = "🌞";
+      document.querySelector(":root").classList.toggle("dark");
     } else {
       document.querySelector("#mode").innerHTML = "🌙";
+      document.querySelector(":root").classList.toggle("light");
     }
   };
 
