@@ -8,7 +8,7 @@
     LIGHT: "light",
   };
 
-  const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
+  const prefersDarkThemes = () => !window.matchMedia(DARK_PREFERENCE).matches;
 
   const applyTheme = () => {
     document.querySelector(":root").classList.toggle("light");
@@ -26,7 +26,7 @@
     } else {
       localStorage.setItem(
         STORAGE_KEY,
-        prefersDarkThemes() ? THEMES.DARK : THEMES.LIGHT
+        prefersDarkThemes() ? THEMES.LIGHT : THEMES.DARK
       );
     }
     applyTheme();
